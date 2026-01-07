@@ -27,6 +27,8 @@ body{
 <div class="text-center mb-5">
   <h1 class="fw-bold">Cloud Analytics Dashboard</h1>
   <p class="text-muted">Aslan Daiyrov (70086) — Cloud Technologies Project</p>
+  <small class="text-muted">Last updated: January 2026</small>
+
 </div>
 
 <div class="row g-4 mb-5">
@@ -104,51 +106,12 @@ body{
 
 </div>
 </div>
+<footer class="text-center text-muted small mt-5">
+Cloud Technologies Project — Aslan Daiyrov (70086)
+</footer>
+<script src="/static/dashboard.js"></script>
 
-<script>
-// BAR 1
-fetch("/api/sales_monthly")
-.then(r=>r.json())
-.then(d=>Plotly.newPlot("salesChart", [{
-  x:d.map(i=>i.month),
-  y:d.map(i=>i.sales),
-  type:"bar"
-}], {}, {displayModeBar:false}));
 
-// BAR 2
-fetch("/api/user_growth")
-.then(r=>r.json())
-.then(d=>Plotly.newPlot("usersChart", [{
-  x:d.map(i=>i.month),
-  y:d.map(i=>i.users),
-  type:"bar"
-}], {}, {displayModeBar:false}));
-
-// PIE 1
-fetch("/api/traffic_sources")
-.then(r=>r.json())
-.then(d=>Plotly.newPlot("trafficChart", [{
-  labels:d.map(i=>i.source),
-  values:d.map(i=>i.percentage),
-  type:"pie"
-}], {}, {displayModeBar:false}));
-
-// PIE 2
-fetch("/api/product_categories")
-.then(r=>r.json())
-.then(d=>Plotly.newPlot("productsChart", [{
-  labels:d.map(i=>i.category),
-  values:d.map(i=>i.percentage),
-  type:"pie"
-}], {}, {displayModeBar:false}));
-</script>
-
-<script>
-function resetChart(id){
-  const gd = document.getElementById(id);
-  Plotly.relayout(gd, {'xaxis.autorange':true, 'yaxis.autorange':true});
-}
-</script>
 
 </body>
 </html>
