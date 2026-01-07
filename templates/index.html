@@ -8,20 +8,34 @@
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
 <style>
-body{background:#f5f7fb;font-family:system-ui}
-.card{border:none;border-radius:16px}
-.chart-box{height:320px}
-.test-btn{
- position:absolute;
- right:14px;
- bottom:14px;
- transition:.2s;
+body{
+ background:linear-gradient(135deg,#6d28d9,#8b5cf6,#a78bfa);
+ font-family:system-ui;
+ color:white;
 }
+
+.card{
+ border:none;
+ border-radius:16px;
+ background:rgba(255,255,255,.15);
+ backdrop-filter:blur(12px);
+ box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+small,.text-muted{color:#e9d5ff!important}
+h1,h4,b{color:white}
+
+.chart-box{height:320px}
 
 .test-btn:hover{
  background:#22c55e;
  border-color:#22c55e;
  color:white;
+}
+.test-btn{
+ position:absolute;
+ bottom:16px;
+ right:16px;
 }
 
 </style>

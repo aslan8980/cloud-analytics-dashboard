@@ -1,9 +1,10 @@
 const baseLayout={
  margin:{t:40,l:50,r:30,b:50},
- paper_bgcolor:"transparent",
- plot_bgcolor:"transparent",
- font:{color:"#1f2937"}
+ paper_bgcolor:"rgba(0,0,0,0)",
+ plot_bgcolor:"rgba(0,0,0,0)",
+ font:{color:"white"}
 };
+
 
 // Monthly Sales
 fetch("/api/sales_monthly").then(r=>r.json()).then(d=>{
