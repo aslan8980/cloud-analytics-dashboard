@@ -1,5 +1,6 @@
 from flask import Flask, jsonify, render_template
 import sqlite3
+import os
 
 app = Flask(__name__)
 DB_NAME = "database.db"
@@ -48,5 +49,7 @@ def product_categories():
     return jsonify([dict(r) for r in rows])
 
 
+
 if __name__ == "__main__":
-    app.run(port=8000)
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 8000)))
+
